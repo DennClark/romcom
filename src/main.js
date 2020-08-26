@@ -4,6 +4,7 @@ var coverImage = document.querySelector(".cover-image");
 var coverTitle = document.querySelector(".cover-title");
 var descriptor1 = document.querySelector(".tagline-1");
 var descriptor2 = document.querySelector(".tagline-2");
+var randomCoverButton = document.querySelector(".random-cover-button")
 // var saveCover = "";
 // var saveTitle = "";
 // var saveImage = "";
@@ -20,8 +21,13 @@ window.addEventListener("load", function() {
   instantiateCurrentCover();
 });
 
+randomCoverButton.addEventListener("click", function() {
+  randomCover();
+  instantiateCurrentCover();
+})
+
 // Create your event handlers and other functions here 👇
-function randomCover(array) {
+function randomCover() {
   coverImage.src = getRandomIndex(covers);
   coverTitle.innerText = getRandomIndex(titles);
   descriptor1.innerText = getRandomIndex(descriptors);
