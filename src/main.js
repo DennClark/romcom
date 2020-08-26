@@ -1,10 +1,12 @@
 // Create variables targetting the relevant DOM elements here 👇
 var mainCover = document.querySelector(".main-cover");
+var formView = document.querySelector(".form-view");
 var coverImage = document.querySelector(".cover-image");
 var coverTitle = document.querySelector(".cover-title");
 var descriptor1 = document.querySelector(".tagline-1");
 var descriptor2 = document.querySelector(".tagline-2");
-var randomCoverButton = document.querySelector(".random-cover-button")
+var randomCoverButton = document.querySelector(".random-cover-button");
+var makeNewCoverButton = document.querySelector(".make-new-button");
 // var saveCover = "";
 // var saveTitle = "";
 // var saveImage = "";
@@ -37,6 +39,11 @@ function randomCover() {
 function instantiateCurrentCover(){
   currentCover = new Cover(coverImage.src, coverTitle.innerText, descriptor1.innerText, descriptor2.innerText);
 };
+
+function changePage(hide, show) {
+  show.classList.toggle("hidden");
+  hide.classList.toggle("hidden");
+}
 
 // We've provided one function to get you started
 // function getRandomIndex(array) {
