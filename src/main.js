@@ -28,6 +28,10 @@ randomCoverButton.addEventListener("click", function() {
   instantiateCurrentCover();
 })
 
+makeNewCoverButton.addEventListener("click", function() {
+  changePage(mainCover, formView);
+})
+
 // Create your event handlers and other functions here 👇
 function randomCover() {
   coverImage.src = getRandomIndex(covers);
