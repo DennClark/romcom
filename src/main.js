@@ -7,6 +7,8 @@ var descriptor1 = document.querySelector(".tagline-1");
 var descriptor2 = document.querySelector(".tagline-2");
 var randomCoverButton = document.querySelector(".random-cover-button");
 var makeNewCoverButton = document.querySelector(".make-new-button");
+var saveCoverButton = document.querySelector(".save-cover-button");
+var homeButton = document.querySelector(".home-button");
 // var saveCover = "";
 // var saveTitle = "";
 // var saveImage = "";
@@ -30,6 +32,9 @@ randomCoverButton.addEventListener("click", function() {
 
 makeNewCoverButton.addEventListener("click", function() {
   changePage(mainCover, formView);
+  toggleButtons(randomCoverButton);
+  toggleButtons(saveCoverButton);
+  toggleButtons(homeButton);
 })
 
 // Create your event handlers and other functions here 👇
@@ -49,6 +54,9 @@ function changePage(hide, show) {
   hide.classList.toggle("hidden");
 }
 
+function toggleButtons(button) {
+  button.classList.toggle("hidden");
+}
 // We've provided one function to get you started
 // function getRandomIndex(array) {
 //   return Math.floor(Math.random() * array.length);
