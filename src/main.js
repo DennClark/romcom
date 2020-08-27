@@ -46,7 +46,15 @@ viewSavedButton.addEventListener("click", function() {
   hideButton(randomCoverButton);
   hideButton(saveCoverButton);
   showButton(homeButton);
-})//This area seems to be breaking the makeCover form view
+})
+
+homeButton.addEventListener("click", function() {
+  changePage(savedCoversSection, mainCover);
+  changePage(formView, mainCover);
+  hideButton(homeButton);
+  showButton(saveCoverButton);
+  showButton(randomCoverButton);
+})
 
 // Create your event handlers and other functions here 👇
 function randomCover() {
