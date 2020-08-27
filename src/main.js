@@ -1,6 +1,7 @@
 // Create variables targetting the relevant DOM elements here 👇
 var mainCover = document.querySelector(".main-cover");
 var formView = document.querySelector(".form-view");
+var savedCoversSection = document.querySelector(".saved-view");
 var coverImage = document.querySelector(".cover-image");
 var coverTitle = document.querySelector(".cover-title");
 var descriptor1 = document.querySelector(".tagline-1");
@@ -9,6 +10,7 @@ var randomCoverButton = document.querySelector(".random-cover-button");
 var makeNewCoverButton = document.querySelector(".make-new-button");
 var saveCoverButton = document.querySelector(".save-cover-button");
 var homeButton = document.querySelector(".home-button");
+var viewSavedButton = document.querySelector(".view-saved-button")
 // var saveCover = "";
 // var saveTitle = "";
 // var saveImage = "";
@@ -32,6 +34,13 @@ randomCoverButton.addEventListener("click", function() {
 
 makeNewCoverButton.addEventListener("click", function() {
   changePage(mainCover, formView);
+  toggleButtons(randomCoverButton);
+  toggleButtons(saveCoverButton);
+  toggleButtons(homeButton);
+})
+
+viewSavedButton.addEventListener("click", function() {
+  changePage(mainCover, savedCoversSection);
   toggleButtons(randomCoverButton);
   toggleButtons(saveCoverButton);
   toggleButtons(homeButton);
