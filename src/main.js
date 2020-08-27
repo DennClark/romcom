@@ -10,7 +10,12 @@ var randomCoverButton = document.querySelector(".random-cover-button");
 var makeNewCoverButton = document.querySelector(".make-new-button");
 var saveCoverButton = document.querySelector(".save-cover-button");
 var homeButton = document.querySelector(".home-button");
-var viewSavedButton = document.querySelector(".view-saved-button")
+var viewSavedButton = document.querySelector(".view-saved-button");
+var makeMyBookButton = document.querySelector(".create-new-book-button");
+var coverInput = document.querySelector("#cover");
+var titleInput = document.querySelector("#title");
+var descriptor1Input = document.querySelector("#descriptor1");
+var descriptor2Input = document.querySelector("#descriptor2");
 // var saveCover = "";
 // var saveTitle = "";
 // var saveImage = "";
@@ -55,6 +60,14 @@ homeButton.addEventListener("click", function() {
   showButton(saveCoverButton);
   showButton(randomCoverButton);
 })
+makeMyBookButton.addEventListener("click", function(event) {
+  event.preventDefault()
+  changePage(formView, mainCover);
+  displayMyCover();
+  hideButton(homeButton);
+  showButton(saveCoverButton);
+  showButton(randomCoverButton);
+})
 
 // Create your event handlers and other functions here 👇
 function randomCover() {
@@ -64,9 +77,20 @@ function randomCover() {
   descriptor2.innerText = getRandomIndex(descriptors);
 };
 
-function instantiateCurrentCover(){
-  currentCover = new Cover(coverImage.src, coverTitle.innerText, descriptor1.innerText, descriptor2.innerText);
+function displayMyCover(){
+  coverImage.src = coverInput.value;
+  coverTitle.innerText = titleInput.value;
+  descriptor1.innerText = descriptor1Input.value;
+  descriptor2.innerText = descriptor2Input.value;
 };
+
+function instantiateMyCover() {
+  myCover = new Cover(coverInput.value, titleInput.value, descriptor1Input.value, descriptor2Input.value);
+}
+
+function currentCover() {
+  currentCover = new Cover(coverImage.src, coverTitle.innerText, descriptor1.innerText, descriptor2.innerText);
+}
 
 function changePage(hide, show) {
   hide.classList.add("hidden");
@@ -80,6 +104,10 @@ function hideButton(button) {
 function showButton(button) {
   button.classList.remove("hidden");
 }
+
+// function myBook() {
+//
+// }
 // We've provided one function to get you started
 // function getRandomIndex(array) {
 //   return Math.floor(Math.random() * array.length);
