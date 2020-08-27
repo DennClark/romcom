@@ -34,17 +34,19 @@ randomCoverButton.addEventListener("click", function() {
 
 makeNewCoverButton.addEventListener("click", function() {
   changePage(mainCover, formView);
-  toggleButtons(randomCoverButton);
-  toggleButtons(saveCoverButton);
-  toggleButtons(homeButton);
+  changePage(savedCoversSection, formView)
+  hideButton(randomCoverButton);
+  hideButton(saveCoverButton);
+  showButton(homeButton);
 })
 
 viewSavedButton.addEventListener("click", function() {
   changePage(mainCover, savedCoversSection);
-  toggleButtons(randomCoverButton);
-  toggleButtons(saveCoverButton);
-  toggleButtons(homeButton);
-})
+  changePage(formView, savedCoversSection);
+  hideButton(randomCoverButton);
+  hideButton(saveCoverButton);
+  showButton(homeButton);
+})//This area seems to be breaking the makeCover form view
 
 // Create your event handlers and other functions here 👇
 function randomCover() {
@@ -59,12 +61,16 @@ function instantiateCurrentCover(){
 };
 
 function changePage(hide, show) {
-  show.classList.toggle("hidden");
-  hide.classList.toggle("hidden");
+  hide.classList.add("hidden");
+  show.classList.remove("hidden");
 }
 
-function toggleButtons(button) {
-  button.classList.toggle("hidden");
+function hideButton(button) {
+  button.classList.add("hidden");
+}
+
+function showButton(button) {
+  button.classList.remove("hidden");
 }
 // We've provided one function to get you started
 // function getRandomIndex(array) {
