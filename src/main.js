@@ -64,9 +64,11 @@ makeMyBookButton.addEventListener("click", function(event) {
   event.preventDefault()
   changePage(formView, mainCover);
   displayMyCover();
+  addToArrays();
   hideButton(homeButton);
   showButton(saveCoverButton);
   showButton(randomCoverButton);
+  console.log(covers);
 })
 
 // Create your event handlers and other functions here 👇
@@ -83,6 +85,13 @@ function displayMyCover(){
   descriptor1.innerText = descriptor1Input.value;
   descriptor2.innerText = descriptor2Input.value;
 };
+
+function addToArrays() {
+  covers.push(coverInput.value);
+  titles.push(titleInput.value);
+  descriptors.push(descriptor1Input.value);
+  descriptors.push(descriptor2Input.value);
+}
 
 function instantiateMyCover() {
   myCover = new Cover(coverInput.value, titleInput.value, descriptor1Input.value, descriptor2Input.value);
