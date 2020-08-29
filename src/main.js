@@ -16,15 +16,11 @@ var coverInput = document.querySelector("#cover");
 var titleInput = document.querySelector("#title");
 var descriptor1Input = document.querySelector("#descriptor1");
 var descriptor2Input = document.querySelector("#descriptor2");
-// var saveCover = "";
-// var saveTitle = "";
-// var saveImage = "";
-// var saveTagline = "";
+
 // We've provided a few variables below
 var savedCovers = [
   new Cover("http://3.bp.blogspot.com/-iE4p9grvfpQ/VSfZT0vH2UI/AAAAAAAANq8/wwQZssi-V5g/s1600/Do%2BNot%2BForsake%2BMe%2B-%2BImage.jpg", "Sunsets and Sorrows", "sunsets", "sorrows")
 ];
-var currentCover;
 
 // Add your event listeners here 👇
 window.addEventListener("load", function() {
@@ -71,6 +67,11 @@ makeMyBookButton.addEventListener("click", function(event) {
   console.log(covers);
 })
 
+saveCoverButton.addEventListener("click", function() {
+  addToSaved();
+  console.log(savedCovers);
+})
+
 // Create your event handlers and other functions here 👇
 function randomCover() {
   coverImage.src = getRandomIndex(covers);
@@ -97,8 +98,9 @@ function instantiateMyCover() {
   myCover = new Cover(coverInput.value, titleInput.value, descriptor1Input.value, descriptor2Input.value);
 }
 
-function currentCover() {
-  currentCover = new Cover(coverImage.src, coverTitle.innerText, descriptor1.innerText, descriptor2.innerText);
+function addToSaved() {
+  var currentCover = new Cover(coverImage.src, coverTitle.innerText, descriptor1.innerText, descriptor2.innerText);
+  savedCovers.push(currentCover)
 }
 
 function changePage(hide, show) {
@@ -114,13 +116,8 @@ function showButton(button) {
   button.classList.remove("hidden");
 }
 
-// function myBook() {
-//
-// }
 // We've provided one function to get you started
-// function getRandomIndex(array) {
-//   return Math.floor(Math.random() * array.length);
-// }
+
 function getRandomIndex(array) {
   var results = Math.floor(Math.random() * array.length);
   return array[results];
