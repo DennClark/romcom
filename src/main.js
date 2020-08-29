@@ -1,7 +1,8 @@
 // Create variables targetting the relevant DOM elements here 👇
 var mainCover = document.querySelector(".main-cover");
 var formView = document.querySelector(".form-view");
-var savedCoversSection = document.querySelector(".saved-view");
+var savedView = document.querySelector(".saved-view");
+var savedCoversSection = document.querySelector(".saved-covers-section");
 var coverImage = document.querySelector(".cover-image");
 var coverTitle = document.querySelector(".cover-title");
 var descriptor1 = document.querySelector(".tagline-1");
@@ -25,32 +26,31 @@ var savedCovers = [
 // Add your event listeners here 👇
 window.addEventListener("load", function() {
   randomCover();
-  instantiateCurrentCover();
 });
 
 randomCoverButton.addEventListener("click", function() {
   randomCover();
-  instantiateCurrentCover();
 })
 
 makeNewCoverButton.addEventListener("click", function() {
   changePage(mainCover, formView);
-  changePage(savedCoversSection, formView)
+  changePage(savedView, formView)
   hideButton(randomCoverButton);
   hideButton(saveCoverButton);
   showButton(homeButton);
 })
 
 viewSavedButton.addEventListener("click", function() {
-  changePage(mainCover, savedCoversSection);
-  changePage(formView, savedCoversSection);
+  changePage(mainCover, savedView);
+  changePage(formView, savedView);
   hideButton(randomCoverButton);
   hideButton(saveCoverButton);
   showButton(homeButton);
+  displaySavedCovers();
 })
 
 homeButton.addEventListener("click", function() {
-  changePage(savedCoversSection, mainCover);
+  changePage(savedView, mainCover);
   changePage(formView, mainCover);
   hideButton(homeButton);
   showButton(saveCoverButton);
@@ -64,7 +64,6 @@ makeMyBookButton.addEventListener("click", function(event) {
   hideButton(homeButton);
   showButton(saveCoverButton);
   showButton(randomCoverButton);
-  console.log(covers);
 })
 
 saveCoverButton.addEventListener("click", function() {
@@ -94,10 +93,6 @@ function addToArrays() {
   descriptors.push(descriptor2Input.value);
 }
 
-function instantiateMyCover() {
-  myCover = new Cover(coverInput.value, titleInput.value, descriptor1Input.value, descriptor2Input.value);
-}
-
 function addToSaved() {
   var currentCover = new Cover(coverImage.src, coverTitle.innerText, descriptor1.innerText, descriptor2.innerText);
   var hasDuplicate = false;
@@ -108,6 +103,14 @@ function addToSaved() {
   }
   if (hasDuplicate === false) {
     savedCovers.push(currentCover);
+  }
+}
+
+function displaySavedCovers() {
+  savedCoversSection.innerHTML = '' 
+  for (var i = 0; i < savedCovers.length; i++) {
+  savedCoversSection.innerHTML += `<section class="mini-cover"><img class="cover-image" src=${savedCovers[i].cover}><h2 class="cover-title">${savedCovers[i].title}</h2><h3 class="tagline">A tale of <span class="tagline-1">${savedCovers[i].tagline1}</span> and <span class="tagline-2">${savedCovers[i].tagline2}
+</span></h3><img class="price-tag" src="./assets/price.png"><img class="overlay" src="./assets/overlay.png"></section>`
   }
 }
 
