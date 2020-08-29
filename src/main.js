@@ -100,7 +100,15 @@ function instantiateMyCover() {
 
 function addToSaved() {
   var currentCover = new Cover(coverImage.src, coverTitle.innerText, descriptor1.innerText, descriptor2.innerText);
-  savedCovers.push(currentCover)
+  var hasDuplicate = false;
+  for (var i = 0; i < savedCovers.length; i++) {
+    if (savedCovers[i].cover === coverImage.src && savedCovers[i].title === coverTitle.innerText && savedCovers[i].tagline1 === descriptor1.innerText && savedCovers[i].tagline2 === descriptor2.innerText) {
+      hasDuplicate = true;
+    }
+  }
+  if (hasDuplicate === false) {
+    savedCovers.push(currentCover);
+  }
 }
 
 function changePage(hide, show) {
