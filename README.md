@@ -39,7 +39,7 @@ Objectives
 2. Every time the user clicks the Show New Random Cover button, the random cover is displayed
 
 The user can click the Show New Random Cover button to create and display a new cover.  The rest of the page remains the same.
-![](http://www.giphy.com/gifs/Up8AfA5pyo4PBg28bV)
+![](https://media.giphy.com/media/Up8AfA5pyo4PBg28bV/giphy.gif)
 ### Iteration 2 - Switching Views
 Objectives
 1. When a user clicks the “Make Your Own Cover” button, we should see the form.  The homepage view and saved covers view should be hidden.
@@ -49,7 +49,7 @@ Objectives
 5. The user can switch between the three views on the correct button clicks.
 
 The user can navigate between the home view, the saved covers, the form for making your own book by using the three corresponding buttons on the top of the page.
-![](http://www.giphy.com/gifs/hR16V8g0EJX570ZCm4)
+![](https://media.giphy.com/media/hR16V8g0EJX570ZCm4/giphy.gif)
 ### Iteration 3 -
 Objectives
 1. In the Make Your Own Cover form view, users should be able to fill out the four input fields and then hit the "Make my book" button.
@@ -59,7 +59,7 @@ Objectives
 5. It will display the newly created cover image, title, and descriptors in the main cover.
 
 The user can create their own custom cover by completing the four input fields and clicking on the "Make my book" button.  The view changes back to the homepage but displays the cover based on user input.  User inputs are also saved for use in later random covers.
-![](http://www.giphy.com/gifs/ThqHyM0DGV9gy90oEG)
+![](https://media.giphy.com/media/ThqHyM0DGV9gy90oEG/giphy.gif)
 ### Iteration 4
 Objective
 1. When a user clicks the “Save Cover” button, the current cover will be added to the savedCovers array.
@@ -68,7 +68,7 @@ Objective
 4. All the covers in the savedCovers array should be displayed in the saved covers section.
 
 The user can save any number of generated covers, but only one time each.  By clicking on the "View Saved Covers" button the user can display smaller images of all covers that have been saved.
-![](http://www.giphy.com/gifs/hQuKoU7OJX19nRLaik)
+![](https://media.giphy.com/media/hQuKoU7OJX19nRLaik/giphy.gif)
 ### Iteration 5
 Objective
 1. From the saved covers view, if a user double clicks a saved poster, it will be deleted.
