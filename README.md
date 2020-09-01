@@ -1,7 +1,10 @@
-# Title: RomCom - Pair
+# RomCom - Pair project
+Mod 1
+
+[Deployed Site](https://dennclark.github.io/romcom/)
+
 
 RomCom is a website that allows users to generate book covers for hypothetical romance novels.  Users can generate covers randomly or by using their own input values via a form.  
-[Deployed Site](https://dennclark.github.io/romcom/)
 Each cover consists of a:
 1. Cover image
 2. title
