@@ -69,7 +69,7 @@ function randomCover() {
   descriptor2.innerText = getRandomIndex(descriptors);
 };
 
-function displayMyCover(){
+function displayMyCover() {
   coverImage.src = coverInput.value;
   coverTitle.innerText = titleInput.value;
   descriptor1.innerText = descriptor1Input.value;
