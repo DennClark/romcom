@@ -32,7 +32,7 @@ The buttons displayed at the top of the page are:
 * View Saved Covers
 * Make Your Own Cover
 
-![](http://www.giphy.com/gifs/L4TOjMLhDbq8ZJkkDz)
+![](http://https://media.giphy.com/media/L4TOjMLhDbq8ZJkkDz/giphy.gif)
 ### Iteration 1 - Show Random Cover
 Objectives
 1. Every time the user clicks the Show New Random Cover button, a new random cover is created
